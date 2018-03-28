@@ -1,0 +1,4 @@
+This is a test file.  We need some long lines.
+It is use to test some redaction utilities. Good luck.
+Hopefully they work.  Shorter lines will come later.
+A shorter line.
