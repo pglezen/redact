@@ -1,4 +1,4 @@
 [
   { "startingAt": 3, "replaceWith": "TTTT"},
-  { "startingAt": 12, "replaceWith": "RRR", "padding": 10 }
+  { "startingAt": 12, "replaceWith": "VVV", "padding": 10 }
 ]

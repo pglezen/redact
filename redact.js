@@ -1,6 +1,6 @@
 // Redact file contents using a rule file of the form
 //
-// [ 
+// [
 //  { startingAt:  3, replaceWith: "WXYZ" },
 //  { startingAt: 15, replaceWith: "QRS", padding: 7 }
 // ]
@@ -13,8 +13,8 @@
 //    - The optional padding attribute means pad to the right
 //      with spaces until the string length is the size indicated
 //      (according to String.prototype.padEnd()).
-// 
-// Invoke as 
+//
+// Invoke as
 //
 //      node redact.js myRules.json myFile.txt > redactedFile.txt
 //
@@ -46,8 +46,7 @@ const processStream = rl => {
       // Don't write past the end of line.
       if (offset < line.length) {
         if (offset + replacement.length > line.length) {
-          replacement = replacement.slice(0, 
-                        offset + replacement.length - line.length);
+          replacement = replacement.slice(0, line.length -  offset);
         }
         let segments = [line.slice(0, offset),
                         replacement,
@@ -60,10 +59,6 @@ const processStream = rl => {
     });
     console.log(line)
   });
-
-  rl.on('close', () => {
-    console.error('Done.');
-  });
 }
 
 if (process.argv.length > 2) {
@@ -73,7 +68,6 @@ if (process.argv.length > 2) {
   rules = JSON.parse(rulesStr);
   if (process.argv.length > 3) {
     let inFilename = process.argv[3];
-    console.error(`About to process ${inFilename}.`);
     let inFileStream = fs.createReadStream(inFilename, 'utf8');
     inFileStream.on('error', err => {
       console.error(`Error attempting to process input file ${err.path}.`);
@@ -90,4 +84,3 @@ if (process.argv.length > 2) {
   console.error(`Usage: ${process.argv[1]} <rule file> [<input file>]`);
   console.error(`       If <input file> is absent, stdin is used.`);
 }
-
