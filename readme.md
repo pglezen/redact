@@ -28,7 +28,7 @@ that for for each line of the input file:
 Invoke as
 
 ```
-node redact.js sampleRules.json sampleInput.txt > redactedFile.txt
+node redact sampleRules.json sampleInput.txt > redactedFile.txt
 ```
 
 Here is the result run on the sample.

@@ -1,0 +1,19 @@
+{
+  "name": "@pglezen/redact",
+  "version": "1.0.0",
+  "description": "Redact fixed positions on every line within a file.",
+  "main": "redact.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pglezen/redact.git"
+  },
+  "author": "Paul Glezen <bs193538@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pglezen/redact/issues"
+  },
+  "homepage": "https://github.com/pglezen/redact#readme"
+}
